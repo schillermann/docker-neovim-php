@@ -24,6 +24,11 @@ RUN useradd --home-dir /workspaces --shell /bin/bash dev \
   && echo "dev:dev" | chpasswd \
   && apt-get install -y sudo \
   && adduser dev sudo
-USER dev
 
+# zsh
+RUN apt-get install -y \
+  zsh
+COPY config/zshrc /workspaces/.zshrc 
+
+USER dev
 CMD ["sleep", "infinity"]
