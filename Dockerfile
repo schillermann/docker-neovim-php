@@ -28,7 +28,12 @@ RUN useradd --home-dir /workspaces --shell /bin/bash dev \
 # zsh
 RUN apt-get install -y \
   zsh
-COPY config/zshrc /workspaces/.zshrc 
-
+COPY --chown=dev:dev zshrc.conf /workspaces/.zshrc 
 USER dev
+# zsh plugins
+RUN mkdir -p ~/.zsh/plugins \
+  && git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/plugins/zsh-autosuggestions
+RUN mkdir -p ~/.zsh/themes \
+  && git clone https://github.com/romkatv/powerlevel10k.git ~/.zsh/themes/powerlevel10k
+
 CMD ["sleep", "infinity"]
