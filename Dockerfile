@@ -52,4 +52,10 @@ RUN mkdir -p ~/.config/nvim/pack/plugins/opt \
   && git clone https://github.com/dcampos/nvim-snippy.git \
   && git clone https://github.com/nvim-lualine/lualine.nvim.git
 
+# neovim lsp
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash \
+  && nvm install node \
+  && npm install -g typescript typescript-language-server \
+  && npm install -g intelephense
+
 CMD ["sleep", "infinity"]

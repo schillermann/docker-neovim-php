@@ -9,4 +9,3 @@ lspconfig.intelephense.setup{
   cmd = {"intelephense", "--stdio"},
   filetypes = { "php" },
 }
-require('lspconfig').dockerls.setup{}
