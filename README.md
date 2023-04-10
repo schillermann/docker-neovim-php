@@ -12,6 +12,9 @@ Create docker container from builed image
 ```sh
 docker run --name dev -d neovim-php
 ```
+## Activate Intelephense Premium
+If you have bought a [license](https://intelephense.com/) for premium features, you can activate it by creating the `/workspaces/intelephense/licence.txt` file and saving the license key in it.
+
 ## Interact
 Connect with running docker container
 ```sh
